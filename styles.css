@@ -10,10 +10,28 @@ body {
     padding: 0;
 }
 
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--secondaryColor);
+    margin: 12px 0;
+}
 
+h2 {
+    font-size: 2rem;
+    font-weight: 700;
+}
 
-section {
-    height: 85vh;
+p, li {
+    font-size: 2rem;
+    font-weight: 420;
+    color: var(--secondaryColor);
+}
+.n {
+    font-size: 4rem;
+    font-weight: 700;
+    color: var(--detailColor);
+    margin: 20px 0; 
 }
 
 .navbar {
@@ -23,6 +41,7 @@ section {
     justify-content: space-around;
     align-items: center;
     background-color: var(--secondaryColor);
+    position: fixed;
 }
 
 .item {
@@ -35,4 +54,76 @@ section {
     font-weight: 700;
     text-decoration: none;
     color: var(--detailColor);
+}
+
+button {
+    width: 30%;
+    /*height: 100%;*/
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+}
+
+.white {
+    background-color: var(--primaryColor);
+    color: var(--detailColor);
+}
+
+.dark {
+    background-color: var(--secondaryColor);
+    color: var(--detailColor);
+}
+
+section {
+    height: 85vh;
+}
+
+#fill {
+    height: 15vh;
+}
+
+#section1 {
+    display: grid;
+    background-color: var(--primaryColor);
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+
+}
+
+#number_section1 {
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
+    justify-self: center;
+}
+
+.container {
+    align-self: center;
+    justify-self: center;
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    width: 100%;
+    align-items: center;
+}
+
+#section1_img {
+    width: 35%;
+    margin: 0 8%;
+
+}
+
+#section1_content {
+    margin: 0 8%;
+}
+
+#button_group {
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+}
+
+#mail {
+    display: flex;
+    justify-content: space-between;
 }
