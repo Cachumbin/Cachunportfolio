@@ -145,13 +145,15 @@ section {
 }
 
 .icon {
-    height: 13vh;
+    height: 9vh;
+    padding: 0 15px;
 }
 
 .list_section {
     display: grid;
-    grid-template-columns: 2fr 8fr 1fr;
-    grid-template-rows: 1fr 0.8fr 1.5fr 0.8fr 1.5fr 0.8fr 1.5fr 1fr;
+    grid-template-columns: 1fr 8fr 2fr;
+    grid-template-rows: 0.8fr 0.7fr 1.25fr 0.7fr 1.25fr 0.7fr 1.25fr 0.8fr;
+    height: 85vh;
 }
 
 .Titles1 {
@@ -188,3 +190,42 @@ section {
     grid-column: 2;
     grid-row: 7; 
 }
+
+.number_grid {
+    align-self: center;
+    justify-self: center;
+}
+
+#section3 {
+    display: flex;
+}
+
+.carousel {
+    width: 100vw;
+
+    overflow: hidden;
+}
+
+.carousel-item {
+    display: none;
+    background-color: var(--secondaryColor);
+    color: var(--detailColor);
+}
+
+.carousel-item.active {
+    display: grid;
+    grid-template-columns: 1fr 20fr 1fr;
+    grid-template-rows: 1fr 20fr 1fr;
+}
+
+.project_content {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.project_button {
+    width: 8vw;
+    background-color: var(--detailColor);
+}
+
+
