@@ -58,7 +58,6 @@ p, li {
 
 button {
     width: 30%;
-    /*height: 100%;*/
     font-size: 2rem;
     font-weight: 700;
     border: none;
@@ -228,4 +227,23 @@ section {
     background-color: var(--detailColor);
 }
 
+.toggleSection {
+    display: flex;
+}
 
+.toggle {
+    display: flex;
+    flex-direction: column;
+}
+
+.toggleContent{
+    padding: 5%;
+}
+
+.toggleTitle {
+    transform: rotate(90deg);
+}
+
+.subsectionToggle {
+    display: flex;
+}
