@@ -247,3 +247,7 @@ section {
 .subsectionToggle {
     display: flex;
 }
+
+.hide {
+    display: none;
+}
