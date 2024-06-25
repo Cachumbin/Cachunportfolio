@@ -4,6 +4,9 @@ const toggle3 = document.getElementById('events')
 const toggle4 = document.getElementById('eventsContent')
 const toggle5 = document.getElementById('certifications')
 const toggle6 = document.getElementById('certificationsContent')
+const toggle7 = document.getElementById('subsectionToggle1')
+const toggle8 = document.getElementById('subsectionToggle2')
+const toggle9 = document.getElementById('subsectionToggle3')
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -12,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const intervalTime = 3000;
     let autoSlide = setInterval(showNextItem, intervalTime);
 
-    toggle2.classList.toggle('hide')
     toggle4.classList.toggle('hide')
     toggle6.classList.toggle('hide')
 
@@ -42,13 +44,19 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 toggle1.addEventListener("click", ()=> {
-    toggle2.classList.toggle('hide')
+    toggle2.classList.remove('hide')
+    toggle4.classList.add('hide')
+    toggle6.classList.add('hide')
 })
 
 toggle3.addEventListener("click", ()=> {
-    toggle4.classList.toggle('hide')
+    toggle2.classList.add('hide')
+    toggle4.classList.remove('hide')
+    toggle6.classList.add('hide')
 })
 
 toggle5.addEventListener("click", ()=> {
-    toggle6.classList.toggle('hide')
+    toggle2.classList.add('hide')
+    toggle4.classList.add('hide')
+    toggle6.classList.remove('hide')
 })
