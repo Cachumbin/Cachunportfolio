@@ -31,7 +31,7 @@ p, li {
     font-size: 4rem;
     font-weight: 700;
     color: var(--detailColor);
-    margin: 20px 0; 
+    margin: 20px 20px; 
 }
 
 .navbar {
@@ -234,13 +234,17 @@ section {
 .toggle {
     display: flex;
     flex-direction: column;
+
+    width: 5vw;
+
 }
 
 .toggleContent{
-    padding: 5%;
+    padding: 30px;
 }
 
 .toggleTitle {
+    margin-top: 100px;
     transform: rotate(90deg);
 }
 
@@ -251,3 +255,9 @@ section {
 .hide {
     display: none;
 }
+
+#education, #eventsContent, #certifications{
+    background-color: var(--secondaryColor);
+    color: var(--detailColor);
+}
+
