@@ -10,36 +10,68 @@ const toggle9 = document.getElementById('subsectionToggle3')
 
 
 document.addEventListener("DOMContentLoaded", function() {
-    const items = document.querySelectorAll('.carousel-item');
+    const carousel = document.querySelector('.carousel');
+    const carouselItems = document.querySelectorAll('.carousel-item');
+    const dots = document.querySelectorAll('.dot');
+    const prevButton = document.querySelector('.prev');
+    const nextButton = document.querySelector('.next');
+    
     let currentItem = 0;
-    const intervalTime = 3000;
+    const intervalTime = 5000;
     let autoSlide = setInterval(showNextItem, intervalTime);
 
-    toggle4.classList.toggle('hide')
-    toggle6.classList.toggle('hide')
 
     function showNextItem() {
-        items[currentItem].classList.remove('active');
-        currentItem = (currentItem + 1) % items.length;
-        items[currentItem].classList.add('active');
+        const totalItems = carouselItems.length;
+        
+        carouselItems[currentItem].classList.remove('active');
+        dots[currentItem].classList.remove('active');
+
+        currentItem = (currentItem + 1) % totalItems;
+
+        carouselItems[currentItem].classList.add('active');
+        dots[currentItem].classList.add('active');
     }
+
 
     function showPrevItem() {
-        items[currentItem].classList.remove('active');
-        currentItem = (currentItem - 1 + items.length) % items.length;
-        items[currentItem].classList.add('active');
+        const totalItems = carouselItems.length;
+
+        carouselItems[currentItem].classList.remove('active');
+        dots[currentItem].classList.remove('active');
+
+        currentItem = (currentItem - 1 + totalItems) % totalItems;
+
+        carouselItems[currentItem].classList.add('active');
+        dots[currentItem].classList.add('active');
     }
 
-    document.querySelector('.next').addEventListener('click', function() {
+    nextButton.addEventListener('click', function() {
         clearInterval(autoSlide);
         showNextItem();
         autoSlide = setInterval(showNextItem, intervalTime);
     });
 
-    document.querySelector('.prev').addEventListener('click', function() {
+    prevButton.addEventListener('click', function() {
         clearInterval(autoSlide);
         showPrevItem();
         autoSlide = setInterval(showNextItem, intervalTime);
+    });
+
+    dots.forEach((dot, index) => {
+        dot.addEventListener('click', function() {
+            clearInterval(autoSlide);
+
+            carouselItems[currentItem].classList.remove('active');
+            dots[currentItem].classList.remove('active');
+
+            currentItem = index;
+
+            carouselItems[currentItem].classList.add('active');
+            dots[currentItem].classList.add('active');
+
+            autoSlide = setInterval(showNextItem, intervalTime);
+        });
     });
 });
 

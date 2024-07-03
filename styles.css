@@ -44,6 +44,7 @@ p, li {
     align-items: center;
     background-color: var(--secondaryColor);
     position: fixed;
+    z-index: 1;
 }
 
 .item {
@@ -225,6 +226,30 @@ section {
     grid-template-rows: 1fr 20fr 1fr;
 }
 
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+    position: absolute;
+    z-index: 0;
+    left: 47.4vw;
+    top: 270vh;
+}
+
+.dot {
+    height: 10px;
+    width: 10px;
+    margin: 0 5px;
+    background-color: var(--detailColor);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot.active {
+    background-color: var(--primaryColor);
+}
+
 .project_content {
     grid-column: 2;
     grid-row: 2;
@@ -242,9 +267,7 @@ section {
 .toggle {
     display: flex;
     flex-direction: column;
-
     width: 5vw;
-
 }
 
 .toggleContent{
