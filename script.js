@@ -60,3 +60,30 @@ toggle5.addEventListener("click", ()=> {
     toggle4.classList.add('hide')
     toggle6.classList.remove('hide')
 })
+
+document.addEventListener("DOMContentLoaded", function() {
+    const navbarLinks = document.querySelectorAll('.navbar a');
+
+    navbarLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            navbarLinks.forEach(navLink => {
+                navLink.classList.remove('active');
+            });
+
+            this.classList.add('active');
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            const sectionBottomPosition = targetSection.offsetTop + targetSection.offsetHeight;
+            const scrollToPosition = sectionBottomPosition - window.innerHeight;
+
+            window.scrollTo({
+                top: scrollToPosition,
+                behavior: 'smooth'
+            });
+        });
+    });
+});
