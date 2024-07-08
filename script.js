@@ -77,20 +77,29 @@ document.addEventListener("DOMContentLoaded", function() {
 
 toggle1.addEventListener("click", ()=> {
     toggle2.classList.add('active')
+    toggle2.classList.remove('hide')
     toggle4.classList.remove('active')
+    toggle4.classList.add('hide')
     toggle6.classList.remove('active')
+    toggle6.classList.add('hide')
 })
 
 toggle3.addEventListener("click", ()=> {
     toggle2.classList.remove('active')
+    toggle2.classList.add('hide')
     toggle4.classList.add('active')
+    toggle4.classList.remove('hide')
     toggle6.classList.remove('active')
+    toggle4.classList.remove('hide')
 })
 
 toggle5.addEventListener("click", ()=> {
     toggle2.classList.remove('active')
+    toggle2.classList.add('hide')
     toggle4.classList.remove('active')
+    toggle4.classList.add('hide')
     toggle6.classList.add('active')
+    toggle6.classList.remove('hide')
 })
 
 document.addEventListener("DOMContentLoaded", function() {

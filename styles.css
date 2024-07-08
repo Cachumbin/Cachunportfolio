@@ -291,17 +291,20 @@ section {
 }
 
 .toggleContent {
-    max-width: 0;
-    opacity: 0;
+    width: 0;
     overflow: hidden;
     transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .toggleContent.active {
-    max-width: 100%; /* Ajusta esto según el diseño deseado */
-    opacity: 1;
+    width: 45vw; /* Ajusta esto según el diseño deseado */
     padding: 30px;
-    transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.toggleContent.hide {
+    width: 0;
+    transition: width 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .toggleTitle {
