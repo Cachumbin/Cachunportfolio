@@ -60,9 +60,14 @@ p, li {
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.item.active {
+.item:hover {
     background-color: var(--detailColor);
     color: var(--secondaryColor);
+}
+
+.item.active {
+    background-color: var(--detailColor);
+    color: var(--primaryColor);
 }
 
 button {
@@ -81,6 +86,19 @@ button {
 .dark {
     background-color: var(--secondaryColor);
     color: var(--detailColor);
+}
+
+.darkHover {
+    transition: color 0.1s ease, background-color 0.3s ease;
+}
+
+.darkHover:hover {
+    background-color: var(--detailColor);
+    color: var(--secondaryColor);
+}
+
+.darkHover:active {
+    color: var(--primaryColor);
 }
 
 section {
@@ -272,8 +290,18 @@ section {
     cursor: pointer;
 }
 
-.toggleContent{
+.toggleContent {
+    max-width: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
+}
+
+.toggleContent.active {
+    max-width: 100%; /* Ajusta esto según el diseño deseado */
+    opacity: 1;
     padding: 30px;
+    transition: max-width 0.5s ease-in-out, opacity 0.5s ease-in-out;
 }
 
 .toggleTitle {
@@ -283,10 +311,6 @@ section {
 
 .subsectionToggle {
     display: flex;
-}
-
-.hide {
-    display: none;
 }
 
 #education, #eventsContent, #certifications{
