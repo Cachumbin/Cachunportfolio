@@ -78,6 +78,17 @@ button {
     cursor: pointer;
 }
 
+.button {
+    width: 30%;
+    font-size: 2rem;
+    font-weight: 700;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .white {
     background-color: var(--primaryColor);
     color: var(--detailColor);
@@ -316,8 +327,11 @@ section {
     display: flex;
 }
 
-#education, #eventsContent, #certifications{
+#education, #educationContent, #certifications, #certificationsContent{
     background-color: var(--secondaryColor);
     color: var(--detailColor);
 }
 
+.darkUl li {
+    color: var(--detailColor);
+}
