@@ -308,7 +308,7 @@ section {
 }
 
 .toggleContent.active {
-    width: 45vw; /* Ajusta esto según el diseño deseado */
+    width: 45vw;
     padding: 30px;
     transition: width 1s ease-in-out, opacity 1s ease-in-out;
 }
@@ -331,6 +331,8 @@ section {
     background-color: var(--secondaryColor);
     color: var(--detailColor);
 }
+
+
 
 .darkUl li {
     color: var(--detailColor);
@@ -373,14 +375,29 @@ section {
         margin: 20px 0;
     }
 
+    #section1_content {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+        justify-self: center;
+    }
+    
+    .sec1 {
+        align-self: center;
+        justify-self: center;
+    }
+
     #button_group {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         height: auto;
+        width: 100%;
     }
 
     .button {
-        width: 80%;
-        margin: 10px 0;
+        width: 100%;
+        height: 3rem;
     }
 
     #mail {
@@ -406,8 +423,19 @@ section {
     }
 
     .carousel-dots {
-        left: 45vw;
-        top: calc(270vh - 12rem);
+        left: 45%;
+        top: calc(270rem - 12rem);
+    }
+
+    .n {
+        font-size: 3rem;
+        font-weight: 700;
+        color: var(--detailColor);
+        margin: 20px 20px; 
+    }
+
+    #container1 {
+        flex-direction: column-reverse;
     }
 }
 
@@ -478,8 +506,8 @@ section {
     }
 
     .carousel-dots {
-        left: 45vw;
-        top: calc(270vh - 12rem);
+        left: 45%;
+        top: calc(270rem - 12rem);
     }
 }
 
@@ -550,7 +578,7 @@ section {
     }
 
     .carousel-dots {
-        left: 45vw;
-        top: calc(270vh - 12rem);
+        left: 45%;
+        top: calc(270rem - 12rem);
     }
 }
