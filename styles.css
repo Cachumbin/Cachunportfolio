@@ -343,6 +343,14 @@ section {
         font-size: 50%;
     }
 
+    section {
+        height: 110rem;
+    }
+
+    .list_section {
+        height: 110rem;
+    }
+
     .navbar {
         height: 8rem;
         flex-direction: column;
