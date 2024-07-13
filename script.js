@@ -7,7 +7,16 @@ const toggle6 = document.getElementById('certificationsContent')
 const toggle7 = document.getElementById('subsectionToggle1')
 const toggle8 = document.getElementById('subsectionToggle2')
 const toggle9 = document.getElementById('subsectionToggle3')
+const botonCopiar = document.getElementById('copiar')
 
+async function copiarContenido() {
+    try {
+        await navigator.clipboard.writeText('simoncarreno2006@gmail.com');
+        console.log('Contenido copiado al portapapeles');
+    } catch (err) {
+        console.error('Error al copiar: ', err);
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     const carousel = document.querySelector('.carousel');
@@ -20,7 +29,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const intervalTime = 5000;
     let autoSlide = setInterval(showNextItem, intervalTime);
 
-
     function showNextItem() {
         const totalItems = carouselItems.length;
         
@@ -32,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function() {
         carouselItems[currentItem].classList.add('active');
         dots[currentItem].classList.add('active');
     }
-
 
     function showPrevItem() {
         const totalItems = carouselItems.length;
@@ -73,36 +80,34 @@ document.addEventListener("DOMContentLoaded", function() {
             autoSlide = setInterval(showNextItem, intervalTime);
         });
     });
-});
 
-toggle1.addEventListener("click", ()=> {
-    toggle2.classList.add('active')
-    toggle2.classList.remove('hide')
-    toggle4.classList.remove('active')
-    toggle4.classList.add('hide')
-    toggle6.classList.remove('active')
-    toggle6.classList.add('hide')
-})
+    toggle1.addEventListener("click", () => {
+        toggle2.classList.add('active');
+        toggle2.classList.remove('hide');
+        toggle4.classList.remove('active');
+        toggle4.classList.add('hide');
+        toggle6.classList.remove('active');
+        toggle6.classList.add('hide');
+    });
 
-toggle3.addEventListener("click", ()=> {
-    toggle2.classList.remove('active')
-    toggle2.classList.add('hide')
-    toggle4.classList.add('active')
-    toggle4.classList.remove('hide')
-    toggle6.classList.remove('active')
-    toggle4.classList.remove('hide')
-})
+    toggle3.addEventListener("click", () => {
+        toggle2.classList.remove('active');
+        toggle2.classList.add('hide');
+        toggle4.classList.add('active');
+        toggle4.classList.remove('hide');
+        toggle6.classList.remove('active');
+        toggle4.classList.remove('hide');
+    });
 
-toggle5.addEventListener("click", ()=> {
-    toggle2.classList.remove('active')
-    toggle2.classList.add('hide')
-    toggle4.classList.remove('active')
-    toggle4.classList.add('hide')
-    toggle6.classList.add('active')
-    toggle6.classList.remove('hide')
-})
+    toggle5.addEventListener("click", () => {
+        toggle2.classList.remove('active');
+        toggle2.classList.add('hide');
+        toggle4.classList.remove('active');
+        toggle4.classList.add('hide');
+        toggle6.classList.add('active');
+        toggle6.classList.remove('hide');
+    });
 
-document.addEventListener("DOMContentLoaded", function() {
     const navbarLinks = document.querySelectorAll('.navbar a');
 
     navbarLinks.forEach(link => {
@@ -127,4 +132,6 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         });
     });
+
+    botonCopiar.addEventListener("click", copiarContenido);
 });
