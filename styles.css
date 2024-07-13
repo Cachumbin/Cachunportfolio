@@ -395,6 +395,11 @@ section {
         justify-self: center;
     }
 
+    .icon {
+        width: 4rem;
+        height: 4rem;
+    }
+
     #button_group {
         flex-direction: column;
         justify-content: center;
