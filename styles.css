@@ -296,6 +296,13 @@ section {
 
 .project_p, .proyect_a, .project_h2 {
     color: var(--detailColor);
+    padding: 35px 35px 0 35px;
+    
+}
+
+.project_a {
+    color: var(--secondaryColor);
+    background-color: var(--detailColor);
 }
 
 .project_img {
