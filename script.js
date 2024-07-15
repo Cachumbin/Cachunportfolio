@@ -26,7 +26,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const nextButton = document.querySelector('.next');
     
     let currentItem = 0;
-    const intervalTime = 5000;
+    const intervalTime = 10000;
     let autoSlide = setInterval(showNextItem, intervalTime);
 
     function showNextItem() {

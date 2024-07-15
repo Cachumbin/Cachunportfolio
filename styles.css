@@ -470,7 +470,7 @@ section {
     }
 
     .list_section {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 3fr;
     }
 
     .carousel-item {
@@ -502,6 +502,14 @@ section {
         display: flex;
         flex-direction: column;
         height: 130rem;
+    }
+
+    #section2_dark, #section2_white {
+        grid-template-columns: 1fr 4fr;
+    }
+
+    .content1 li, .content2 li, .content3 li {
+        font-size: 1.8rem;
     }
 }
 
