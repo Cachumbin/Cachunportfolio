@@ -303,6 +303,14 @@ section {
 .project_a {
     color: var(--secondaryColor);
     background-color: var(--detailColor);
+    margin: 35px;
+    padding: 20px;
+    transition: color 0,5 ease-in-out;
+}
+
+.project_a:hover {
+    color: var(--primaryColor);
+    background-color: var(--detailColor);
 }
 
 .project_img {
