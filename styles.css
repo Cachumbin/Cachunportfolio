@@ -440,7 +440,7 @@ section {
     }
     
     #section1 {
-        grid-template-columns: 1fr 7fr 2fr;
+        grid-template-columns: 1fr 7fr 1fr;
     }
 
     #nodisplay {
@@ -508,7 +508,7 @@ section {
     #section2 {
         display: flex;
         flex-direction: column;
-        height: 130rem;
+        height: 1248px;
     }
 
     #section2_dark, #section2_white {
@@ -520,7 +520,7 @@ section {
     }
 
     #section3 {
-        height: 75rem;
+        height: 66rem;
         display: grid;
         grid-template-columns: 3fr 3fr 3fr;
         grid-template-rows: 10fr 1fr;
