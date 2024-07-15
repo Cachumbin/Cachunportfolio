@@ -296,7 +296,8 @@ section {
 
 .project_p, .proyect_a, .project_h2 {
     color: var(--detailColor);
-    padding: 35px 35px 0 35px;
+    padding: 20px 20px 0 20px;
+
     
 }
 
@@ -311,6 +312,18 @@ section {
 .project_a:hover {
     color: var(--primaryColor);
     background-color: var(--detailColor);
+}
+
+.project_text {
+    display: grid;
+    grid-template-rows:3fr 6fr 3fr 3fr;
+}
+
+#project_flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
 }
 
 .project_img {
