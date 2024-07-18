@@ -508,7 +508,7 @@ section {
     #section2 {
         display: flex;
         flex-direction: column;
-        height: 1248px;
+        height: 1150px;
     }
 
     #section2_dark, #section2_white {
