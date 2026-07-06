@@ -136,6 +136,8 @@ section {
     height: 12rem;
 }
 
+
+
 #section1 {
     display: grid;
     background-color: var(--primaryColor);
@@ -262,6 +264,7 @@ section {
 
 #section3 {
     display: flex;
+
 }
 
 .carousel {
@@ -284,7 +287,6 @@ section {
 .carousel-dots {
     display: flex;
     justify-content: center;
-    margin-top: 10px;
     position: absolute;
     z-index: 0;
     left: 47.4vw;
@@ -339,6 +341,10 @@ section {
     transition: color 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.project_a:empty {
+    display: none;
+}
+
 .project_a:hover {
     color: var(--primaryColor);
     background-color: var(--detailColor);
@@ -348,7 +354,7 @@ section {
 
 .project_text {
     display: grid;
-    grid-template-rows:3fr 6fr 3fr 3fr;
+    grid-template-rows: auto 1fr auto auto;
 }
 
 #project_flex {
@@ -365,8 +371,14 @@ section {
 }
 
 .project_button {
-    width: 8vw;
+    width: 10vw;
+    min-width: 100px;
+    padding: 14px 0;
     background-color: var(--detailColor);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
 }
 
 .toggleSection {
@@ -417,13 +429,11 @@ section {
 
 .reveal {
     opacity: 0;
-    transform: translateY(40px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
+    transition: opacity 0.8s ease;
 }
 
 .reveal.is-visible {
     opacity: 1;
-    transform: translateY(0);
 }
 
 @keyframes heroFadeIn {
@@ -489,11 +499,13 @@ section {
         width: 6rem;
         height: 6rem;
         position: fixed;
-        top: 0;
-        right: 0;
+        top: 1.2rem;
+        right: 1.2rem;
         z-index: 5;
         background-color: var(--secondaryColor);
         border: none;
+        border-radius: 8px;
+        padding: 0;
         cursor: pointer;
     }
 
@@ -628,6 +640,7 @@ section {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         height: auto;
+        min-height: 55vh;
     }
 
     .project_img {
@@ -738,6 +751,7 @@ section {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         height: auto;
+        min-height: 55vh;
     }
 
     .project_img {
@@ -750,6 +764,11 @@ section {
 @media only screen and (max-width: 840px) {
     html {
         font-size: 60%;
+    }
+
+    #section1 {
+        height: 110rem;
+        grid-template-rows: auto 1fr auto;
     }
 
     .navbar {
@@ -823,6 +842,7 @@ section {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
         height: auto;
+        min-height: 55vh;
     }
 
     .project_img {
@@ -875,6 +895,10 @@ section {
         justify-self: center;
         align-self: center;
         margin: 0;
+    }
+
+    .dot.active {
+        background-color: var(--secondaryColor);
     }
 
     .project_text {
@@ -934,5 +958,159 @@ section {
         width: 100%;
         max-height: 0;
         padding: 0 20px;
+    }
+}
+
+@media only screen and (min-width: 841px) and (max-width: 1024px) {
+    #section1 {
+        height: auto;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .container {
+        flex-direction: column;
+    }
+
+    #section1_img {
+        width: 45%;
+        margin: 15px 0;
+    }
+
+    .list_section {
+        grid-template-columns: 1fr;
+    }
+
+    .carousel-item.active {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr auto;
+    }
+
+    .carousel-item.active .number_grid {
+        justify-self: start;
+    }
+
+    .project_content {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        min-height: 55vh;
+    }
+
+    .project_img {
+        height: auto;
+        width: 100%;
+        max-width: 60%;
+    }
+
+    #section3 {
+        height: auto;
+        min-height: calc(100vh - 12rem);
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 20px 0 30px;
+    }
+
+    .carousel {
+        grid-column: 1/4;
+        grid-row: 1;
+    }
+
+    .prev, .next {
+        grid-row: 2;
+        align-self: center;
+        z-index: 2;
+    }
+
+    .prev {
+        grid-column: 1;
+        justify-self: start;
+        margin-left: 24px;
+    }
+
+    .next {
+        grid-column: 3;
+        justify-self: end;
+        margin-right: 24px;
+    }
+
+    .project_button {
+        width: auto;
+        min-width: 0;
+        padding: 12px 24px;
+    }
+
+    .carousel-dots {
+        position: static;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    .dot.active {
+        background-color: var(--secondaryColor);
+    }
+
+    .project_text {
+        padding: 0 30px 30px;
+    }
+
+    .project_a {
+        margin: 15px auto;
+        width: calc(100% - 40px);
+        text-align: center;
+    }
+
+    .toggleSection {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .subsectionToggle {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .toggle {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px;
+    }
+
+    .toggle .n {
+        margin: 0;
+        font-size: 2.6rem;
+    }
+
+    .toggleTitle {
+        margin-top: 0;
+        transform: none;
+    }
+
+    .toggleContent {
+        width: 100%;
+        max-width: 100%;
+        max-height: 0;
+        padding: 0 30px;
+        transition: max-height 0.6s ease, padding 0.6s ease;
+    }
+
+    .toggleContent.active {
+        width: 100%;
+        max-height: 3000px;
+        padding: 30px;
+        transition: max-height 0.6s ease, padding 0.6s ease;
+    }
+
+    .toggleContent.hide {
+        width: 100%;
+        max-height: 0;
+        padding: 0 30px;
     }
 }
