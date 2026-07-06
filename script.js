@@ -8,6 +8,26 @@ const toggle7 = document.getElementById('subsectionToggle1')
 const toggle8 = document.getElementById('subsectionToggle2')
 const toggle9 = document.getElementById('subsectionToggle3')
 const botonCopiar = document.getElementById('copiar')
+const cvLink = document.getElementById('cv-link')
+
+function detectLanguage() {
+    const lang = navigator.language || navigator.userLanguage || '';
+    return lang.toLowerCase().startsWith('en') ? 'en' : 'es';
+}
+
+function applyTranslations(lang) {
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n-es]').forEach(el => {
+        const text = lang === 'en' ? el.dataset.i18nEn : el.dataset.i18nEs;
+        if (text) el.textContent = text;
+    });
+}
+
+function setCvLinkByLanguage(lang) {
+    cvLink.href = lang === 'en'
+        ? './pdf/CV_Simon_Carreno_2026_EN.pdf'
+        : './pdf/CV_Simon_Carreno_2026.pdf';
+}
 
 async function copiarContenido() {
     try {
@@ -19,6 +39,10 @@ async function copiarContenido() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+    const lang = detectLanguage();
+    applyTranslations(lang);
+    setCvLinkByLanguage(lang);
+
     const carousel = document.querySelector('.carousel');
     const carouselItems = document.querySelectorAll('.carousel-item');
     const dots = document.querySelectorAll('.dot');
