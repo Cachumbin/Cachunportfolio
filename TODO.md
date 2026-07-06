@@ -24,10 +24,10 @@
 
 ## 5. Tech Stack & Skills Update
 
-- [ ] **Frontend Section:** Add logos/tags for **Vue.js**, **Astro**, and **React**[cite: 2].
-- [ ] **Backend & Databases:** Build out a backend subsection containing **Node.js**, **FastAPI/Python**, **Prisma**, and **PostgreSQL**[cite: 2].
-- [ ] **Infrastructure & DevOps:** Add **Jenkins** (CI/CD) and **VPS** hosting deployment experience[cite: 2].
-- [ ] **Soft Skills:** Align with the CV by highlighting _Knowledge Acquisition_, _Logical Thinking_, _Critical Thinking_, and _Problem Solving_[cite: 2].
+- [x] **Frontend Section:** Add logos/tags for **Vue.js**, **Astro**, and **React**[cite: 2].
+- [x] **Backend & Databases:** Build out a backend subsection containing **Node.js**, **FastAPI/Python**, **Prisma**, and **PostgreSQL**[cite: 2].
+- [x] **Infrastructure & DevOps:** Add **Jenkins** (CI/CD) and **VPS** hosting deployment experience[cite: 2].
+- [x] **Soft Skills:** Align with the CV by highlighting _Knowledge Acquisition_, _Logical Thinking_, _Critical Thinking_, and _Problem Solving_[cite: 2].
 
 ## 6. Professional Work Experience
 
