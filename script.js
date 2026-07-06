@@ -7,6 +7,8 @@ const toggle6 = document.getElementById('certificationsContent')
 const toggle7 = document.getElementById('subsectionToggle1')
 const toggle8 = document.getElementById('subsectionToggle2')
 const toggle9 = document.getElementById('subsectionToggle3')
+const toggle10 = document.getElementById('experience')
+const toggle11 = document.getElementById('experienceContent')
 const botonCopiar = document.getElementById('copiar')
 const cvLink = document.getElementById('cv-link')
 
@@ -116,32 +118,24 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     });
 
-    toggle1.addEventListener("click", () => {
-        toggle2.classList.add('active');
-        toggle2.classList.remove('hide');
-        toggle4.classList.remove('active');
-        toggle4.classList.add('hide');
-        toggle6.classList.remove('active');
-        toggle6.classList.add('hide');
-    });
+    const toggleContents = [toggle2, toggle4, toggle6, toggle11];
 
-    toggle3.addEventListener("click", () => {
-        toggle2.classList.remove('active');
-        toggle2.classList.add('hide');
-        toggle4.classList.add('active');
-        toggle4.classList.remove('hide');
-        toggle6.classList.remove('active');
-        toggle4.classList.remove('hide');
-    });
+    function showToggleContent(target) {
+        toggleContents.forEach(content => {
+            if (content === target) {
+                content.classList.add('active');
+                content.classList.remove('hide');
+            } else {
+                content.classList.remove('active');
+                content.classList.add('hide');
+            }
+        });
+    }
 
-    toggle5.addEventListener("click", () => {
-        toggle2.classList.remove('active');
-        toggle2.classList.add('hide');
-        toggle4.classList.remove('active');
-        toggle4.classList.add('hide');
-        toggle6.classList.add('active');
-        toggle6.classList.remove('hide');
-    });
+    toggle1.addEventListener("click", () => showToggleContent(toggle2));
+    toggle3.addEventListener("click", () => showToggleContent(toggle4));
+    toggle5.addEventListener("click", () => showToggleContent(toggle6));
+    toggle10.addEventListener("click", () => showToggleContent(toggle11));
 
     const navbarLinks = document.querySelectorAll('.navbar a');
     const navToggle = document.getElementById('nav-toggle');

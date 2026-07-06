@@ -31,7 +31,7 @@
 
 ## 6. Professional Work Experience
 
-- [ ] **Add Work Experience Section:** Implement a modern timeline or clean card layout to showcase your professional roles[cite: 2]:
+- [x] **Add Work Experience Section:** Implement a modern timeline or clean card layout to showcase your professional roles[cite: 2]:
   - **Freelance Developer at Casa Fidenza** (2026-04 - Present): Full lifecycle development with Astro, React, Node.js, Prisma, PostgreSQL, Jenkins CI/CD, and VPS deployment[cite: 2].
   - **Vue.js and JS Developer at Kiplan** (2025-02 - 2025-08): Excel Add-in development for financial consulting, automated testing implementation, and optimization[cite: 2].
   - **Data Structures Teaching Assistant at UniAndes** (2025-01 - 2025-05)[cite: 2].
