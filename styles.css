@@ -5,6 +5,10 @@ html {
     font-style: normal;
 }
 
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background-color: var(--primaryColor);
     margin: 0;
@@ -105,16 +109,19 @@ button {
 }
 
 .darkHover {
-    transition: color 0.1s ease, background-color 0.3s ease;
+    transition: color 0.1s ease, background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .darkHover:hover {
     background-color: var(--detailColor);
     color: var(--secondaryColor);
+    transform: translateY(-3px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25);
 }
 
 .darkHover:active {
     color: var(--primaryColor);
+    transform: translateY(-1px);
 }
 
 section {
@@ -194,6 +201,12 @@ section {
 .icon {
     height: 9vh;
     padding: 0 15px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.icon:hover {
+    transform: translateY(-8px) scale(1.08);
+    filter: drop-shadow(0 8px 12px rgba(0, 0, 0, 0.3));
 }
 
 .list_section {
@@ -248,8 +261,7 @@ section {
 }
 
 .carousel {
-    width: 100vw;
-
+    width: 100%;
     overflow: hidden;
 }
 
@@ -282,7 +294,11 @@ section {
     background-color: var(--detailColor);
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.dot:hover {
+    transform: scale(1.4);
 }
 
 .dot.active {
@@ -296,6 +312,12 @@ section {
     height: 70vh;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.carousel-item.active:hover .project_content {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.35);
 }
 
 .project_p, .proyect_a, .project_h2 {
@@ -310,12 +332,14 @@ section {
     background-color: var(--detailColor);
     margin: 35px;
     padding: 20px;
-    transition: color 0,7 ease-in-out;
+    transition: color 0.3s ease-in-out, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project_a:hover {
     color: var(--primaryColor);
     background-color: var(--detailColor);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.3);
 }
 
 .project_text {
@@ -387,6 +411,58 @@ section {
     color: var(--detailColor);
 }
 
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@keyframes heroFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+#section1_content > * {
+    opacity: 0;
+    animation: heroFadeIn 0.7s ease forwards;
+}
+
+#section1_content > *:nth-child(1) { animation-delay: 0.05s; }
+#section1_content > *:nth-child(2) { animation-delay: 0.15s; }
+#section1_content > *:nth-child(3) { animation-delay: 0.25s; }
+#section1_content > *:nth-child(4) { animation-delay: 0.35s; }
+#section1_content > *:nth-child(5) { animation-delay: 0.45s; }
+
+#section1_img {
+    opacity: 0;
+    animation: heroFadeIn 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+    .reveal, #section1_content > *, #section1_img {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     html {
         font-size: 50%;
@@ -405,6 +481,10 @@ section {
         flex-direction: column;
         justify-content: center;
         align-items: center;
+    }
+
+    #fill {
+        height: 8rem;
     }
 
     .item {
@@ -454,8 +534,9 @@ section {
     }
 
     .icon {
-        width: 4rem;
         height: 4rem;
+        width: auto;
+        padding: 0 10px;
     }
 
     #button_group {
@@ -484,14 +565,27 @@ section {
         grid-template-columns: 1fr 3fr;
     }
 
-    .carousel-item {
+    .carousel-item.active {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
 
-    .carousel-dots {
-        left: 45%;
-        top: calc(270rem - 12rem);
+    .carousel-item.active .number_grid {
+        justify-self: start;
+    }
+
+    .project_content {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+
+    .project_img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
     }
 
     .n {
@@ -518,43 +612,6 @@ section {
     .content1 li, .content2 li, .content3 li {
         font-size: 1.7rem;
     }
-
-    #section3 {
-        height: 66rem;
-        display: grid;
-        grid-template-columns: 3fr 3fr 3fr;
-        grid-template-rows: 10fr 1fr;
-    }
-
-    .carousel {
-        grid-column: 1/4;
-        grid-row: 1/3;
-    }
-
-    .prev {
-        grid-column: 1;
-        grid-row: 2;
-        z-index: 2;
-    }
-
-    .next {
-        grid-column: 3;
-        grid-row: 2;
-        z-index: 2;
-    }
-
-    .project_button {
-        width: 33vw;
-    }
-
-    .carousel-dots {
-        position: static;
-        grid-column: 2;
-        grid-row: 2;
-        justify-self: center;
-        align-self: center;
-        margin: 0;
-    }
 }
 
 @media only screen and (max-width: 768px) {
@@ -563,6 +620,10 @@ section {
     }
 
     .navbar {
+        height: 10rem;
+    }
+
+    #fill {
         height: 10rem;
     }
 
@@ -614,9 +675,27 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .carousel-item {
+    .carousel-item.active {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
+    }
+
+    .carousel-item.active .number_grid {
+        justify-self: start;
+    }
+
+    .project_content {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+
+    .project_img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
     }
 }
 
@@ -626,6 +705,10 @@ section {
     }
 
     .navbar {
+        height: 11rem;
+    }
+
+    #fill {
         height: 11rem;
     }
 
@@ -677,13 +760,131 @@ section {
         grid-template-columns: 1fr;
     }
 
-    .carousel-item {
+    .carousel-item.active {
         grid-template-columns: 1fr;
         grid-template-rows: auto 1fr auto;
     }
 
+    .carousel-item.active .number_grid {
+        justify-self: start;
+    }
+
+    .project_content {
+        grid-column: 1;
+        grid-row: 2;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+        height: auto;
+    }
+
+    .project_img {
+        height: auto;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    #section3 {
+        height: auto;
+        min-height: calc(100vh - 11rem);
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        grid-template-rows: 1fr auto;
+        padding: 20px 0 30px;
+    }
+
+    .carousel {
+        grid-column: 1/4;
+        grid-row: 1;
+    }
+
+    .prev, .next {
+        grid-row: 2;
+        align-self: center;
+        z-index: 2;
+    }
+
+    .prev {
+        grid-column: 1;
+        justify-self: start;
+        margin-left: 16px;
+    }
+
+    .next {
+        grid-column: 3;
+        justify-self: end;
+        margin-right: 16px;
+    }
+
+    .project_button {
+        width: auto;
+        padding: 10px 18px;
+    }
+
     .carousel-dots {
-        left: 45%;
-        top: calc(269rem - 12rem);
+        position: static;
+        grid-column: 2;
+        grid-row: 2;
+        justify-self: center;
+        align-self: center;
+        margin: 0;
+    }
+
+    .project_text {
+        padding: 0 20px 20px;
+    }
+
+    .project_a {
+        margin: 10px auto;
+        width: calc(100% - 20px);
+        text-align: center;
+    }
+
+    .toggleSection {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .subsectionToggle {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .toggle {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-between;
+        align-items: center;
+        padding: 20px;
+    }
+
+    .toggle .n {
+        margin: 0;
+        font-size: 2.4rem;
+    }
+
+    .toggleTitle {
+        margin-top: 0;
+        transform: none;
+    }
+
+    .toggleContent {
+        width: 100%;
+        max-width: 100%;
+        max-height: 0;
+        padding: 0 20px;
+        transition: max-height 0.6s ease, padding 0.6s ease;
+    }
+
+    .toggleContent.active {
+        width: 100%;
+        max-height: 2000px;
+        padding: 20px;
+        transition: max-height 0.6s ease, padding 0.6s ease;
+    }
+
+    .toggleContent.hide {
+        width: 100%;
+        max-height: 0;
+        padding: 0 20px;
     }
 }

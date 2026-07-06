@@ -8,9 +8,9 @@
 
 ## 2. UI/UX Refinement & Animations
 
-- [ ] **Polished Styles:** Refine borders, spacing, padding, and typography scales across all sections to ensure a pixel-perfect, premium look.
-- [ ] **Keep the Soul & Palette:** Maintain the original color scheme, core branding, identity, and "soul" of the portfolio while elevating its overall execution.
-- [ ] **Enhanced Animations:** Add smooth, micro-interactions and transitions (e.g., hover effects on tech stack icons, card elevation on projects, smooth section fades, or a subtle layout entry animation). Ensure they are lightweight and don't feel overdone.
+- [x] **Polished Styles:** Refine borders, spacing, padding, and typography scales across all sections to ensure a pixel-perfect, premium look.
+- [x] **Keep the Soul & Palette:** Maintain the original color scheme, core branding, identity, and "soul" of the portfolio while elevating its overall execution.
+- [x] **Enhanced Animations:** Add smooth, micro-interactions and transitions (e.g., hover effects on tech stack icons, card elevation on projects, smooth section fades, or a subtle layout entry animation). Ensure they are lightweight and don't feel overdone.
 
 ## 3. Responsive Web Design (RWD)
 

@@ -43,6 +43,17 @@ document.addEventListener("DOMContentLoaded", function() {
     applyTranslations(lang);
     setCvLinkByLanguage(lang);
 
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                revealObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
     const carousel = document.querySelector('.carousel');
     const carouselItems = document.querySelectorAll('.carousel-item');
     const dots = document.querySelectorAll('.dot');
