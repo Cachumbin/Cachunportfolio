@@ -35,9 +35,3 @@
   - **Freelance Developer at Casa Fidenza** (2026-04 - Present): Full lifecycle development with Astro, React, Node.js, Prisma, PostgreSQL, Jenkins CI/CD, and VPS deployment[cite: 2].
   - **Vue.js and JS Developer at Kiplan** (2025-02 - 2025-08): Excel Add-in development for financial consulting, automated testing implementation, and optimization[cite: 2].
   - **Data Structures Teaching Assistant at UniAndes** (2025-01 - 2025-05)[cite: 2].
-
-## 7. Education & Volunteering
-
-- [ ] **Formal Education:** Update Systems Engineering status to **Sixth semester**[cite: 2].
-- [ ] **High School Milestone:** Update **Gimnasio Los Andes** to mention your meritorious graduation project (Single-use polyethylene replacement biopolymer from potato starch)[cite: 2].
-- [ ] **Robotics & Volunteering:** Group your leadership role at the Gimnasio Los Andes Robotics Group (2022-02 - 2023-11) and update the timeline tags for events (Funbotic 2018, First Lego League 2019, WRO 2022)[cite: 2].
