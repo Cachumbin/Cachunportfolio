@@ -144,6 +144,20 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     const navbarLinks = document.querySelectorAll('.navbar a');
+    const navToggle = document.getElementById('nav-toggle');
+    const navbar = document.getElementById('navbar');
+
+    function closeMobileNav() {
+        navbar.classList.remove('nav-open');
+        navToggle.classList.remove('is-active');
+        navToggle.setAttribute('aria-expanded', 'false');
+    }
+
+    navToggle.addEventListener('click', () => {
+        const isOpen = navbar.classList.toggle('nav-open');
+        navToggle.classList.toggle('is-active', isOpen);
+        navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
 
     navbarLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -154,6 +168,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
 
             this.classList.add('active');
+            closeMobileNav();
 
             const targetId = this.getAttribute('href').substring(1);
             const targetSection = document.getElementById(targetId);

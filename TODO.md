@@ -14,8 +14,8 @@
 
 ## 3. Responsive Web Design (RWD)
 
-- [ ] **Flawless Mobile Experience:** Thoroughly audit and refactor the CSS/layout rules to make the portfolio look outstanding on all screen sizes (mobile, tablet, desktop).
-- [ ] **Layout Adaptability:** Ensure grids/flexboxes wrap perfectly, fonts scale dynamically, and navigation headers convert into a functional mobile-friendly menu if needed.
+- [x] **Flawless Mobile Experience:** Thoroughly audit and refactor the CSS/layout rules to make the portfolio look outstanding on all screen sizes (mobile, tablet, desktop).
+- [x] **Layout Adaptability:** Ensure grids/flexboxes wrap perfectly, fonts scale dynamically, and navigation headers convert into a functional mobile-friendly menu if needed.
 
 ## 4. GitHub Projects Automation (For Claude)
 
