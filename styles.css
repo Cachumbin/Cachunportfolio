@@ -482,6 +482,10 @@ section {
         font-size: 50%;
     }
 
+    #fill {
+        height: 0;
+    }
+
     section {
         height: 85rem;
     }
@@ -547,10 +551,6 @@ section {
         font-size: 1.8rem;
     }
 
-    #fill {
-        height: 6rem;
-    }
-
     h1 {
         font-size: 3rem;
     }
@@ -581,6 +581,7 @@ section {
     
     #section1 {
         grid-template-columns: 1fr 7fr 1fr;
+        margin-top: 0;
     }
 
     #nodisplay {

@@ -19,8 +19,8 @@
 
 ## 4. GitHub Projects Automation (For Claude)
 
-- [ ] **Analyze Profile:** Claude, please review my active GitHub profile (`Cachumbin`) to identify my top, most complete, and visually impactful projects (e.g., full-stack apps, automated systems, or low-level tools).
-- [ ] **Project Selection & Replacement:** Replace the outdated project showcase on the portfolio with these top repositories. For each project, write a clean title, a compelling technical description (stack used, problem solved), and configure the proper links for the source code and live demo (if applicable).
+- [x] **Analyze Profile:** Claude, please review my active GitHub profile (`Cachumbin`) to identify my top, most complete, and visually impactful projects (e.g., full-stack apps, automated systems, or low-level tools).
+- [x] **Project Selection & Replacement:** Replace the outdated project showcase on the portfolio with these top repositories. For each project, write a clean title, a compelling technical description (stack used, problem solved), and configure the proper links for the source code and live demo (if applicable).
 
 ## 5. Tech Stack & Skills Update
 
